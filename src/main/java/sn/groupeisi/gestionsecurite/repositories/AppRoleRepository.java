@@ -1,7 +1,10 @@
 package sn.groupeisi.gestionsecurite.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import sn.groupeisi.gestionsecurite.entities.AppRole;
+import sn.groupeisi.gestionsecurite.entities.AppRoleEntity;
 
-public interface AppRoleRepository extends JpaRepository<AppRole, Integer> {
+import java.util.Optional;
+
+public interface AppRoleRepository extends JpaRepository<AppRoleEntity, Integer> {
+    Optional<AppRoleEntity> findByName(String name);
 }

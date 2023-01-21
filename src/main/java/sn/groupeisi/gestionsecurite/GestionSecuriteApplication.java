@@ -3,10 +3,9 @@ package sn.groupeisi.gestionsecurite;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import sn.groupeisi.gestionsecurite.entities.AppRole;
-import sn.groupeisi.gestionsecurite.entities.AppUser;
-import sn.groupeisi.gestionsecurite.services.IAppRole;
-import sn.groupeisi.gestionsecurite.services.IAppUser;
+import sn.groupeisi.gestionsecurite.entities.AppRoleEntity;
+import sn.groupeisi.gestionsecurite.services.IAppRoleService;
+import sn.groupeisi.gestionsecurite.services.IAppUserService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,14 +13,7 @@ import java.util.List;
 @SpringBootApplication
 public class GestionSecuriteApplication implements CommandLineRunner {
 
-    private IAppUser iAppUser;
-    private IAppRole iAppRole;
 
-
-    public GestionSecuriteApplication(IAppUser iAppUser, IAppRole iAppRole) {
-        this.iAppUser = iAppUser;
-        this.iAppRole = iAppRole;
-    }
 
     public static void main(String[] args) {
         SpringApplication.run(GestionSecuriteApplication.class, args);
@@ -46,10 +38,10 @@ public class GestionSecuriteApplication implements CommandLineRunner {
 //        appUser.setRoles(roles);
 //        iAppUser.save(appUser);
 
-        List<AppRole> appRoles = new ArrayList<>();
-               appRoles = iAppRole.findAll();
-        appRoles.forEach(role -> {
-            System.out.println(role);
-        });
-    }
+//        List<AppRoleEntity> appRoles = new ArrayList<>();
+//               appRoles = iAppRole.findAll();
+//        appRoles.forEach(role -> {
+//            System.out.println(role);
+//        });
+   }
 }

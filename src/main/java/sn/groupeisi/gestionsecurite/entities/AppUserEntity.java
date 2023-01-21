@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AppUser extends BaseEntity{
+public class AppUserEntity extends BaseEntity{
     @Column(name = "firsname", nullable = false, length = 200)
     private String firsName;
     @Column (name = "lastname", nullable = false, length = 150)
@@ -23,5 +23,5 @@ public class AppUser extends BaseEntity{
     @Column (name = "password", nullable = false, length = 200)
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
-    List<AppRole> roles = new ArrayList<AppRole>();
+    List<AppRoleEntity> roles = new ArrayList<AppRoleEntity>();
 }

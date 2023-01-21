@@ -6,7 +6,7 @@ services:
     container_name: container_mysql_hibernate
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: gestionsecuritedb
+      MYSQL_DATABASE: gestionsecurite
       MYSQL_USER: root
       MYSQL_PASSWORD:
     ports:
@@ -25,8 +25,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       PMA_HOST: mysql-hibernate
-      PMA_USER: usersec
-      PMA_PASSWORD: usersec
+      PMA_USER: root
+      PMA_PASSWORD: root
     depends_on:
       - mysql-hibernate
     restart: unless-stopped

@@ -1,5 +1,4 @@
 package sn.groupeisi.gestionsecurite.entities;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,9 +15,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AppRole extends BaseEntity {
+public class AppRoleEntity extends BaseEntity {
     @Column(name = "name", nullable = false, length = 200, unique = true)
     private String name;
     @ManyToMany(mappedBy = "roles")
-    List<AppUser> users = new ArrayList<AppUser>();
+    List<AppUserEntity> users = new ArrayList<AppUserEntity>();
 }

@@ -3,17 +3,17 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/gestionsecurite?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: postgres
-    password: admin
-    driverClassName: org.postgresql.Driver
+    url: jdbc:mysql://localhost:3306/gestionsecurite?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
   application:
-    name: spring-admin
+    name: security-management
 
   jpa:
     hibernate:
-      ddl-auto: update
-      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: create
+      dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
     properties:
       hibernate:
@@ -22,5 +22,5 @@ spring:
 
 info:
   application:
-    name: aeesgs-app
+    name: gestionsecurity-app
     version: '@project.version@'
