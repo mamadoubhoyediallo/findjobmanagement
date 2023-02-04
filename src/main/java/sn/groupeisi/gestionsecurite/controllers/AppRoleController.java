@@ -3,7 +3,6 @@ package sn.groupeisi.gestionsecurite.controllers;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import sn.groupeisi.gestionsecurite.dtos.AppRoles;
-import sn.groupeisi.gestionsecurite.entities.AppRoleEntity;
 import sn.groupeisi.gestionsecurite.services.IAppRoleService;
 
 import javax.validation.Valid;
