@@ -1,8 +1,10 @@
 package sn.groupeisi.gestionsecurite.services.impl;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import sn.groupeisi.gestionsecurite.dtos.AppUser;
 import sn.groupeisi.gestionsecurite.entities.AppUserEntity;
@@ -24,10 +26,13 @@ public class AppUserServiceImpl implements IAppUserService {
     private AppUserRepository appUserRepository;
     private AppUserMapper appUserMapper;
     private MessageSource messageSource;
+    private PasswordEncoder passwordEncoder;
 
     @Override
-    public AppUser loaduser(String username) {
-        return null;
+    public AppUser loadUserByEmail(String email) {
+        return appUserMapper.toAppUser(appUserRepository.findByEmail(email).orElseThrow(() ->
+                new EntityNotFoundException(messageSource.getMessage("user.notfound", new Object[]{email},
+                        Locale.getDefault()))));
     }
 
     @Override
@@ -66,7 +71,8 @@ public class AppUserServiceImpl implements IAppUserService {
                     throw new RequestException(messageSource.getMessage("user.exists", new Object[]{appUser.getEmail()},
                             Locale.getDefault()), HttpStatus.CONFLICT);
                 });
-
+        String password = appUser.getPassword();
+        appUser.setPassword(passwordEncoder.encode(password));
         AppUserEntity re = appUserMapper.fromAppUser(appUser);
         re = appUserRepository.save(re);
         return  appUserMapper.toAppUser(re);

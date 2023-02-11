@@ -4,7 +4,7 @@ import sn.groupeisi.gestionsecurite.dtos.AppUser;
 import sn.groupeisi.gestionsecurite.entities.AppUserEntity;
 
 public interface IAppUserService extends IBaseService<AppUser> {
-    AppUser loaduser(String username);
+    AppUser loadUserByEmail(String email);
     public AppUser findById(int id);
     public void delete(int id);
     public AppUser update(int id, AppUser appUser);
