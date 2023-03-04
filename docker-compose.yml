@@ -6,7 +6,7 @@ services:
     container_name: container_mysql_hibernate
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: gestionsecurite
+      MYSQL_DATABASE: examjee
       MYSQL_USER: user
       MYSQL_PASSWORD:
     ports:
