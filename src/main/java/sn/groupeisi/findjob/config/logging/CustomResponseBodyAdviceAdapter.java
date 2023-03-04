@@ -13,14 +13,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 import sn.groupeisi.findjob.service.ILoggingService;
 
-
-/**
- * @Author : DAOUDA BORY Yacouba Software Engineer
- * @Project : object-model
- * @Package : sn.finapps.guce.logging
- * @Date : 11/06/2020
- * @Time : 14:23
- */
 @ControllerAdvice
 @AllArgsConstructor
 public class CustomResponseBodyAdviceAdapter implements ResponseBodyAdvice<Object> {

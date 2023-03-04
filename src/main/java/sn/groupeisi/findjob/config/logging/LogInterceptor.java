@@ -8,17 +8,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import sn.groupeisi.findjob.service.ILoggingService;
 
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * @Author : DAOUDA BORY Yacouba Software Engineer
- * @Project : object-model
- * @Package : sn.finapps.guce.logging
- * @Date : 11/06/2020
- * @Time : 14:14
- */
 @Component
 @AllArgsConstructor
 public class LogInterceptor extends HandlerInterceptorAdapter {

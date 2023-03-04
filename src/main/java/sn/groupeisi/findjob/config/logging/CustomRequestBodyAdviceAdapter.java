@@ -13,13 +13,6 @@ import sn.groupeisi.findjob.service.ILoggingService;
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Type;
 
-/**
- * @Author : DAOUDA BORY Yacouba Software Engineer
- * @Project : object-model
- * @Package : sn.finapps.guce.logging
- * @Date : 11/06/2020
- * @Time : 14:21
- */
 @ControllerAdvice
 @AllArgsConstructor
 public class CustomRequestBodyAdviceAdapter extends RequestBodyAdviceAdapter {
